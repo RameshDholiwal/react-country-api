@@ -1,0 +1,81 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+  border: 2px solid; 
+}
+.form-control:active, .form-control:focus{
+  box-shadow: none;
+}
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.btn svg{
+  gap: 5px;
+}
+textarea{
+  resize: none;
+}
+
+.menubar{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+.modeLabel{
+  cursor: pointer;
+}
+
+
+.cardDetail {
+  display: flex;
+}
+.cardDetail .card {
+  height: 100%;
+  box-shadow: 5px 5px 15px 5px #dddddd70, 5px 5px 15px 5px #c5bebe99 inset
+}
+.cardDetail a {
+  width: 100%;
+  text-decoration: none;
+}
+.cardDetail a:hover {
+  transform: scale3d(1.02, 1.02, 1);
+  z-index: 9999;
+}
+.cardDetail img{
+  height: 180px;
+}
+.cardDetail p{
+  margin: 0;
+}
+
+
+#countrySlide{
+  width: 100%;
+  height: 500px;
+}
+#countrySlide img{
+  height: 500px;
+}
+
+
+
+.singleCard{
+
+}
+.singleCard img{
+  height: 300px;
+  min-width: 300px;
+  width: 100%;
+}
+.singleCard .detailRow{
+  margin: 3px;
+}
