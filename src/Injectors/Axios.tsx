@@ -6,7 +6,12 @@ const api = axios.create({
 
 //http get method
 export const getCountryData = () => {
-    return api.get("/all");
+    return api.get("/all", {
+        timeout: 10000,
+        validateStatus: function (status) {
+            return status >= 200 && status < 500;
+        }
+    });
 };
 
 //http get method

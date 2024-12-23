@@ -19,6 +19,7 @@ export default function CountryList() {
             const distinctRegion = res.data.map((d:any) => d.region).filter((item:string, index:Number, self:string) => self.indexOf(item) === index)
             setRegionList(distinctRegion)
         } catch(err) {
+            console.log("hii")
             console.log(err);
         }
     }

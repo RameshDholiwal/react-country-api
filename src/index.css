@@ -22,8 +22,13 @@ body {
   min-height: 100vh;
 }
 body.darkMode{
-  --bs-body-bg: #000;
+  --bs-body-bg: #3a3f42c2;
   --bs-body-color: #fff;
+}
+.bg-dark {
+  --bs-bg-opacity: 0.76;
+  --bs-dark-rgb: 58, 63, 66;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
 .carousel-control-next, .carousel-control-prev{
   color: var(--bs-body-color);
