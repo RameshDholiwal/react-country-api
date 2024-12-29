@@ -1,13 +1,14 @@
+import { lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
 import App from './App.tsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import CountryList from './Components/CountryList.tsx'
-import CountryDetails from './Components/CountryDetails.tsx'
-import About from './Components/About.tsx'
-import Home from './Components/Home.tsx'
+const CountryList = lazy(() => import('./Components/CountryList.tsx'))
+const CountryDetails = lazy(() => import('./Components/CountryDetails.tsx'))
+const About = lazy(() => import('./Components/About.tsx'))
+const Home = lazy(() => import('./Components/Home.tsx'))
 
 const router = createBrowserRouter([{
   path : "/",
@@ -15,19 +16,19 @@ const router = createBrowserRouter([{
   children: [
     {
       path: "/",
-      element: <Home />
+      element: <Suspense fallback={"loading..."}><Home /></Suspense>
     },
     {
       path: "/About",
-      element: <About />
+      element: <Suspense fallback={"loading..."}><About /></Suspense>
     },
     {
       path: "/Country",
-      element: <CountryList />
+      element: <Suspense fallback={"loading..."}><CountryList /></Suspense>
     },
     {
       path: "/:country",
-      element: <CountryDetails />
+      element: <Suspense fallback={"loading..."}><CountryDetails /></Suspense>
     }
   ]
 }])

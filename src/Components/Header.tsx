@@ -15,7 +15,7 @@ export default function Header() {
       <nav className= {`navbar navbar-expand-sm fixed-top navbar-${currentMode} bg-${currentMode}`}>
         <div className="container-fluid">
           <div className='col-3'>
-            <span className="navbar-brand mb-0 h1">Countries</span>
+            <NavLink className="navbar-brand mb-0 h1" to={'/'}>Countries</NavLink>
           </div>
           <div className='col menubar'>
             <div className='collapse navbar-collapse' id='navbarNav'>

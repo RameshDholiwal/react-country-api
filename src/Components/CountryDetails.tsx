@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getCountryDetailsByName } from '../Injectors/Axios.tsx';
 import { FaArrowLeft } from 'react-icons/fa';
+import Country from './Country.tsx';
+import CountryShimmer from './CountryShimmer.tsx';
 
 type countryformat = {
   name: string,
@@ -48,6 +50,7 @@ export default function CountryDetails() {
     useEffect(() => {
       getCountryDetail()
     }, [])
+
   return (
     <>
         <div className="row mb-2">
@@ -57,42 +60,9 @@ export default function CountryDetails() {
           <div className="col"></div>
         </div>
         {
-          countryDetail && (
-            <div className="row singleCard">
-              <div className="col">
-                <img src={countryDetail.imageUrl} alt="" />
-              </div>
-              <div className="col">
-                <p className='detailRow'>
-                  <b>Name:</b> {countryDetail.name}
-                </p>
-                <p className='detailRow'>
-                  <b>Region:</b> {countryDetail.region}
-                </p>
-                <p className='detailRow'>
-                  <b>Sub-Region:</b> {countryDetail.subRegion}
-                </p>
-                <p className='detailRow'>
-                  <b>Population:</b> {countryDetail.population}
-                </p>
-                <p className='detailRow'>
-                  <b>Area:</b> {countryDetail.area}
-                </p>
-                <p className='detailRow'>
-                  <b>Languages:</b> {countryDetail.languages}
-                </p>
-                <p className='detailRow'>
-                  <b>Currencies:</b> {countryDetail.currencies}
-                </p>
-                <p className='detailRow'>
-                  <b>Continents:</b> {countryDetail.continents}
-                </p>
-                <p className='detailRow'>
-                  <b>Capital:</b> {countryDetail.capital}
-                </p>
-              </div>
-            </div>
-          )
+          countryDetail ? 
+            <Country callFrom='detail' country={countryDetail} />
+            : <CountryShimmer callFrom='detail' />
         }
         
     </>

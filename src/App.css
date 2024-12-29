@@ -8,8 +8,12 @@
   box-shadow: none;
   border: 2px solid; 
 }
+.bg-light{
+  border-bottom: 1px solid #e5e5e58f;
+}
 .form-control:active, .form-control:focus{
   box-shadow: none;
+  border-color: var(--bs-body-color);
 }
 .btn{
   display: flex;
@@ -38,9 +42,13 @@ textarea{
 .cardDetail {
   display: flex;
 }
-.cardDetail .card {
+.cardDetail .card, .cardDetailShimmer .card {
   height: 100%;
   box-shadow: 5px 5px 15px 5px #dddddd70, 5px 5px 15px 5px #c5bebe99 inset
+}
+body.darkMode .cardDetail .card {
+  height: 100%;
+  box-shadow: none
 }
 .cardDetail a {
   width: 100%;
@@ -48,13 +56,30 @@ textarea{
 }
 .cardDetail a:hover {
   transform: scale3d(1.02, 1.02, 1);
-  z-index: 9999;
+  z-index: 99;
 }
 .cardDetail img{
   height: 180px;
 }
 .cardDetail p{
   margin: 0;
+}
+.cardDetailShimmer .card-img-top{
+  height: 180px;
+  background-color: #c5bebe99;
+}
+.cardDetailShimmer h4, .cardDetailShimmer p{
+  margin: 8px 0px;
+}
+.cardDetailShimmer h4 span{
+  width: 90%;
+  display: block;
+  border: 10px solid #d5cece;
+}
+.cardDetailShimmer p span{
+  width: 70%;
+  display: block;
+  border: 10px solid #d5cece;
 }
 
 
@@ -68,9 +93,6 @@ textarea{
 
 
 
-.singleCard{
-
-}
 .singleCard img{
   height: 300px;
   min-width: 300px;
@@ -78,4 +100,19 @@ textarea{
 }
 .singleCard .detailRow{
   margin: 3px;
+}
+
+.singleCardDetailShimmer .cardImg{
+  height: 300px;
+  min-width: 300px;
+  width: 100%;
+  background-color: #c5bebe99;
+}
+.singleCardDetailShimmer p{
+  margin: 8px 0px;
+}
+.singleCardDetailShimmer p span{
+  width: 70%;
+  display: block;
+  border: 12px solid #d5cece;
 }
